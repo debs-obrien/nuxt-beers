@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-wrap">
-    <p v-if="$fetchState.pending">Fetching beers...</p>
+    <div v-if="$fetchState.pending" class="loading-container">
+      <div class="loading"></div>
+    </div>
     <p v-else-if="$fetchState.error">An error occurred :(</p>
 
     <div
@@ -54,3 +56,22 @@ export default {
   },
 }
 </script>
+<style scoped>
+.loading-container {
+  margin: 200px auto;
+}
+.loading {
+  display: inline-block;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 4px solid rgba(9, 133, 81, 0.705);
+  border-radius: 50%;
+  border-top-color: #158876;
+  animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+</style>

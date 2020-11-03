@@ -11,7 +11,7 @@
         <img
           :src="review.img"
           :alt="review.title"
-          class="h-10 w-10 rounded-full"
+          class="h-20 w-20 rounded-full"
         />
         <div class="flex flex-col">
           <span class="text-sm leading-5 font-medium text-gray-900">

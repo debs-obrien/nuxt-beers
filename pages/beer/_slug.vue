@@ -24,7 +24,10 @@
         <p class="text-sm text-gray-700 mt-4">ABV: {{ beer.abv }}</p>
         <p class="text-sm text-gray-700 mt-4">Size: {{ beer.size }}</p>
         <div class="flex items-center justify-end mt-4 top-auto">
-          <button class="bg-blue-600 text-gray-200 px-2 py-2 rounded-md">
+          <button
+            class="bg-blue-600 text-gray-200 px-2 py-2 rounded-md"
+            @click="sendToCart"
+          >
             Purchase
           </button>
         </div>
@@ -46,6 +49,11 @@ export default {
     )
 
     return { beer }
+  },
+  methods: {
+    sendToCart() {
+      this.$toast.show('Adding to Cart...').goAway(1000)
+    },
   },
 }
 </script>

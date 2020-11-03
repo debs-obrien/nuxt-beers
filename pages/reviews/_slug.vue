@@ -30,7 +30,7 @@
           </div>
         </div>
       </div>
-      <div class="bg-red-600 w-full md:w-1/2 h-screen">
+      <div class="w-full md:w-1/2 h-screen">
         <img :src="review.img" class="h-screen w-full" :alt="review.title" />
       </div>
     </div>
@@ -39,6 +39,7 @@
 
 <script>
 export default {
+  transition: 'slide-bottom',
   async asyncData({ $content, params }) {
     const review = await $content('reviews', params.slug).fetch()
     const [prev, next] = await $content('reviews')
@@ -48,5 +49,61 @@ export default {
       .fetch()
     return { review, prev, next }
   },
+  // head: {
+  //   title: this.review.title,
+  //   meta: [
+  //     {
+  //       hid: 'description',
+  //       name: 'description',
+  //       content: this.review.description,
+  //     },
+  //     { property: 'og:site_name', content: this.review.title },
+  //     { hid: 'og:type', property: 'og:type', content: 'website' },
+  //     {
+  //       hid: 'og:url',
+  //       property: 'og:url',
+  //       content: 'http://nuxt-beers.surge.sh',
+  //     },
+  //     {
+  //       hid: 'og:title',
+  //       property: 'og:title',
+  //       content: this.review.title,
+  //     },
+  //     {
+  //       hid: 'og:description',
+  //       property: 'og:description',
+  //       content: this.review.description,
+  //     },
+  //     {
+  //       hid: 'og:image',
+  //       property: 'og:image',
+  //       content: this.review.img,
+  //     },
+  //     { property: 'og:image:width', content: '740' },
+  //     { property: 'og:image:height', content: '300' },
+  //     { name: 'twitter:site', content: '@debs_obrien' },
+  //     { name: 'twitter:card', content: 'summary_large_image' },
+  //     {
+  //       hid: 'twitter:url',
+  //       name: 'twitter:url',
+  //       content: 'http://nuxt-beers.surge.sh',
+  //     },
+  //     {
+  //       hid: 'twitter:title',
+  //       name: 'twitter:title',
+  //       content: this.review.title,
+  //     },
+  //     {
+  //       hid: 'twitter:description',
+  //       name: 'twitter:description',
+  //       content: this.review.description,
+  //     },
+  //     {
+  //       hid: 'twitter:image',
+  //       name: 'twitter:image',
+  //       content: this.review.img,
+  //     },
+  //   ],
+  // },
 }
 </script>
