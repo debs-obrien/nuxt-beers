@@ -58,6 +58,7 @@ export default {
         return
       }
       this.reviews = await this.$content('reviews')
+        .only(['title', 'slug'])
         .limit(6)
         .search(searchQuery)
         .fetch()
