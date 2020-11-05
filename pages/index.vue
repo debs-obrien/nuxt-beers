@@ -1,6 +1,10 @@
 <template>
-  <div class="container">
+  <div class="container flex flex-col">
     <TheHero />
+    <div>
+      <h2 class="font-bold text-xl m-8">Look at all those Beers</h2>
+      <ProductCard />
+    </div>
   </div>
 </template>
 

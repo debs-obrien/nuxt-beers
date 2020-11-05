@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- component -->
-    <div class="relative text-gray-600 search mx-auto">
+    <div class="relative text-gray-600 search mx-auto rounded-full shadow">
       <input
         v-model="searchQuery"
         type="search"
@@ -31,9 +31,12 @@
         </svg>
       </button>
     </div>
-    <ul v-if="reviews.length">
+    <ul v-if="reviews.length" class="font-normal">
       <li v-for="review of reviews" :key="review.slug">
-        <NuxtLink :to="{ name: 'reviews-slug', params: { slug: review.slug } }">
+        <NuxtLink
+          :to="{ name: 'reviews-slug', params: { slug: review.slug } }"
+          class="hover:font-bold"
+        >
           {{ review.title }}
         </NuxtLink>
       </li>
@@ -55,6 +58,7 @@ export default {
         return
       }
       this.reviews = await this.$content('reviews')
+        .only(['title', 'slug'])
         .limit(6)
         .search(searchQuery)
         .fetch()

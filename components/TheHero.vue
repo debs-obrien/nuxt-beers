@@ -17,7 +17,7 @@ export default {}
   flex-direction: column;
   text-align: center;
   width: 100%;
-  height: 100vh; /* if you don't want it to take up the full screen, reduce this number */
+  height: 70vh; /* if you don't want it to take up the full screen, reduce this number */
   overflow: hidden;
   background: linear-gradient(
       to top,
