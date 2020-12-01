@@ -23,8 +23,8 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.11.1",
+    "@nuxtjs/pwa": "^3.3.2",
     "@nuxtjs/axios": "^5.12.3",
-    "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/toast": "^3.3.1",
     "core-js": "^3.8.0",
     "nuxt": "^2.14.6"
